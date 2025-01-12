@@ -1,5 +1,6 @@
 package com.gabriel.proposal_app.service;
 
+import com.gabriel.proposal_app.Mapper.ProposalMapper;
 import com.gabriel.proposal_app.dto.ProposalRequestDto;
 import com.gabriel.proposal_app.dto.ProposalResponseDto;
 import com.gabriel.proposal_app.entity.Proposal;
@@ -14,7 +15,9 @@ public class ProposalService {
     ProposalRepository proposalRepository;
 
     public ProposalResponseDto create(ProposalRequestDto dto){
-//        proposalRepository.save(new Proposal());
-        return null;
+        Proposal proposal = ProposalMapper.INSTANCE.toProposal(dto);
+        proposalRepository.save(proposal);
+
+        return ProposalMapper.INSTANCE.toProposalResponseDto(proposal);
     }
 }

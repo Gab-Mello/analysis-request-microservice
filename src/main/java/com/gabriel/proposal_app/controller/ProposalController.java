@@ -22,7 +22,5 @@ public class ProposalController {
     public ResponseEntity<ProposalResponseDto> create(@RequestBody ProposalRequestDto dto){
         ProposalResponseDto response = proposalService.create(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
-
-
     }
 }
