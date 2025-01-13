@@ -8,6 +8,8 @@ import com.gabriel.proposal_app.repository.ProposalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProposalService {
 
@@ -19,10 +21,12 @@ public class ProposalService {
 
     public ProposalResponseDto create(ProposalRequestDto dto){
         Proposal proposal = proposalMapper.toProposal(dto);
-        System.out.println("dto: " + dto);
-        System.out.println("proposal "+ proposal.getUser());
         proposalRepository.save(proposal);
-
         return proposalMapper.toProposalResponseDto(proposal);
+    }
+
+    public List<ProposalResponseDto> getAll(){
+        List<Proposal> list = proposalRepository.findAll();
+        return proposalMapper.toProposalResponseDtoList(list);
     }
 }

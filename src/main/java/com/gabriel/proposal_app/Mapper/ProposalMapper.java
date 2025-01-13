@@ -6,6 +6,8 @@ import com.gabriel.proposal_app.entity.Proposal;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface ProposalMapper {
 
@@ -26,4 +28,6 @@ public interface ProposalMapper {
     @Mapping(target = "phone", source = "user.phone")
     @Mapping(target = "cpf", source = "user.cpf")
     ProposalResponseDto toProposalResponseDto(Proposal proposal);
+
+    List<ProposalResponseDto> toProposalResponseDtoList(List<Proposal> list);
 }

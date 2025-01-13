@@ -6,21 +6,26 @@ import com.gabriel.proposal_app.service.ProposalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/proposal")
+import java.util.List;
+
+@RequestMapping("/proposta")
 @RestController
 public class ProposalController {
 
     @Autowired
     ProposalService proposalService;
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<ProposalResponseDto> create(@RequestBody ProposalRequestDto dto){
         ProposalResponseDto response = proposalService.create(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ProposalResponseDto>> getAll(){
+        List<ProposalResponseDto> list = proposalService.getAll();
+        return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 }
