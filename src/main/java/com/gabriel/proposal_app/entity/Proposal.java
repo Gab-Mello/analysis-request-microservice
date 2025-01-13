@@ -1,21 +1,11 @@
 package com.gabriel.proposal_app.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "proposals")
 public class Proposal {
@@ -34,11 +24,63 @@ public class Proposal {
 
     private String observation;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Proposal(String name,  String lastName, String phone, String cpf, Double income, Double requestAmount, int paymentTerm){
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getRequestAmount() {
+        return requestAmount;
+    }
+
+    public void setRequestAmount(Double requestAmount) {
+        this.requestAmount = requestAmount;
+    }
+
+    public int getPaymentTerm() {
+        return paymentTerm;
+    }
+
+    public void setPaymentTerm(int paymentTerm) {
+        this.paymentTerm = paymentTerm;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    }
+
+    public boolean isIntegrated() {
+        return integrated;
+    }
+
+    public void setIntegrated(boolean integrated) {
+        this.integrated = integrated;
+    }
+
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

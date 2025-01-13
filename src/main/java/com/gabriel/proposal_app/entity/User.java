@@ -13,8 +13,6 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "users")
 public class User {
@@ -34,4 +32,60 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private Proposal proposal;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public Double getIncome() {
+        return income;
+    }
+
+    public Proposal getProposal() {
+        return proposal;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
+    public void setProposal(Proposal proposal) {
+        this.proposal = proposal;
+    }
 }

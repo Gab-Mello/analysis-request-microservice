@@ -14,10 +14,15 @@ public class ProposalService {
     @Autowired
     ProposalRepository proposalRepository;
 
+    @Autowired
+    ProposalMapper proposalMapper;
+
     public ProposalResponseDto create(ProposalRequestDto dto){
-        Proposal proposal = ProposalMapper.INSTANCE.toProposal(dto);
+        Proposal proposal = proposalMapper.toProposal(dto);
+        System.out.println("dto: " + dto);
+        System.out.println("proposal "+ proposal.getUser());
         proposalRepository.save(proposal);
 
-        return ProposalMapper.INSTANCE.toProposalResponseDto(proposal);
+        return proposalMapper.toProposalResponseDto(proposal);
     }
 }
