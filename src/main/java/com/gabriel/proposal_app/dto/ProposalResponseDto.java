@@ -12,101 +12,101 @@ public class ProposalResponseDto {
 
     private Long id;
 
-    private String name;
+    private String nome;
 
-    private String lastName;
+    private String sobrenome;
 
-    private String phone;
+    private String telefone;
 
     private String cpf;
 
-    private Double income;
+    private Double renda;
 
-    private Double requestAmount;
+    private String valorSolicitadoFmt;
 
-    private int paymentTerm;
+    private int prazoPagamento;
 
-    private Boolean approved;
+    private Boolean aprovada;
 
-    private String observation;
+    private String observacao;
 
     public Long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public Double getIncome() {
-        return income;
-    }
-
-    public Double getRequestAmount() {
-        return requestAmount;
-    }
-
-    public int getPaymentTerm() {
-        return paymentTerm;
-    }
-
-    public Boolean getApproved() {
-        return approved;
-    }
-
-    public String getObservation() {
-        return observation;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public void setIncome(Double income) {
-        this.income = income;
+    public Double getRenda() {
+        return renda;
     }
 
-    public void setRequestAmount(Double requestAmount) {
-        this.requestAmount = requestAmount;
+    public void setRenda(Double renda) {
+        this.renda = renda;
     }
 
-    public void setPaymentTerm(int paymentTerm) {
-        this.paymentTerm = paymentTerm;
+    public String getValorSolicitadoFmt() {
+        return valorSolicitadoFmt;
     }
 
-    public void setApproved(Boolean approved) {
-        this.approved = approved;
+    public void setValorSolicitadoFmt(String valorSolicitadoFmt) {
+        this.valorSolicitadoFmt = valorSolicitadoFmt;
     }
 
-    public void setObservation(String observation) {
-        this.observation = observation;
+    public int getPrazoPagamento() {
+        return prazoPagamento;
+    }
+
+    public void setPrazoPagamento(int prazoPagamento) {
+        this.prazoPagamento = prazoPagamento;
+    }
+
+    public Boolean getAprovada() {
+        return aprovada;
+    }
+
+    public void setAprovada(Boolean aprovada) {
+        this.aprovada = aprovada;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
 }
