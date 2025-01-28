@@ -1,5 +1,6 @@
 package com.gabriel.proposal_app.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,6 +27,7 @@ public class Proposal {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
+    @JsonManagedReference
     private User user;
 
     public Long getId() {
